@@ -7,7 +7,7 @@ import java.util.UUID;
 //  Map solution: Venue must implement serializable to pass in an Extra
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-public class Venue
+public class Venue implements Serializable
 {
     private UUID mId;
     private String mName;

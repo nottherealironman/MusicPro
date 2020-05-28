@@ -8,7 +8,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
+import java.io.Serializable;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity
 
     public void onMapClick(View view)
     {
+        Intent intent = new Intent(MainActivity.this, MapActivity.class);
+        intent.putExtra("Venue", mVenue);
+        startActivity(intent);
     }
 
     // just for testing the map without retrieving top-rated venue
