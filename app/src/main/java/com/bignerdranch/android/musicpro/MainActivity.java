@@ -8,8 +8,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.Serializable;
-
 public class MainActivity extends AppCompatActivity
 {
     Venue mVenue;
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity
 
     public void onMapClick(View view)
     {
-        Intent intent = new Intent(MainActivity.this, MapActivity.class);
+        Intent intent = new Intent(MainActivity.this, MapsActivity.class);
         intent.putExtra("Venue", mVenue);
         startActivity(intent);
     }

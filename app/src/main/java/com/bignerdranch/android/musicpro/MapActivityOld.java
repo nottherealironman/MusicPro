@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.UUID;
 
-public class MapActivity extends AppCompatActivity {
+public class MapActivityOld extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
