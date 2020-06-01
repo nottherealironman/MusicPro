@@ -104,7 +104,7 @@ public class VenueDetailsFragment extends Fragment
                     //checking venue's opening time given or not
                     if (mOpeningTime.getText().toString().isEmpty())
                     {
-                        eMessage="You are invited to "+ mVenueName.getText().toString()+" tonight";
+                        eMessage="You are invited to "+ mVenueName.getText().toString();
                     }
                     else
                     {
