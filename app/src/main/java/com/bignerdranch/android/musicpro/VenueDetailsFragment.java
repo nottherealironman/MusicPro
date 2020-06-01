@@ -23,7 +23,6 @@ public class VenueDetailsFragment extends Fragment
     private EditText mVenueName;
     private EditText mVenueAddress;
     private EditText mOpeningTime;
-    private String eSubject="Invitation";//title of email
     private String eMessage;// body of email
 
     private Button mEmailButton;
@@ -100,7 +99,7 @@ public class VenueDetailsFragment extends Fragment
                     Intent it = new Intent(Intent.ACTION_SEND);
                     it.setType("text/plain");
                     // putting title of email in intent
-                    it.putExtra(Intent.EXTRA_SUBJECT,eSubject);
+                    it.putExtra(Intent.EXTRA_SUBJECT,getString(R.string.invitation));
                     //checking venue's opening time given or not
                     if (mOpeningTime.getText().toString().isEmpty())
                     {
@@ -111,7 +110,7 @@ public class VenueDetailsFragment extends Fragment
                         eMessage="You are invited to "+ mVenueName.getText().toString()+" tonight at "+ mOpeningTime.getText().toString();
                     }
                     it.putExtra(Intent.EXTRA_TEXT, eMessage);
-                    startActivity(Intent.createChooser(it,"Send Invitation"));
+                    startActivity(Intent.createChooser(it,getString(R.string.chooser)));
                 }
                 }
         });
