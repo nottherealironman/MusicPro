@@ -12,8 +12,6 @@ public class MainActivity extends AppCompatActivity
 {
     Venue mVenue;
 
-    //private static final String TAG = "PhotoGalleryFragment";
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -40,16 +38,7 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    // just for testing the map without retrieving top-rated venue
-    void getTestVenue()
-    {
-        mVenue = new Venue();
-        mVenue.setName("Reef Hotel");
-        mVenue.setAddress("Wharf Street, Cairns");
-        mVenue.setLat(-16.9238);
-        mVenue.setLon(145.7797);
-    }
-
+    // Multithreading using AsyncTask
     private class FetchItemTask extends AsyncTask<Void, Void, Venue>
     {
 

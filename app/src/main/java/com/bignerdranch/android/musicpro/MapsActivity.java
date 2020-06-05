@@ -29,7 +29,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         venueTitle = mVenue.getName();
         venueLat = mVenue.getLat();
         venueLon = mVenue.getLon();
-        Log.d("MapActivity:","---"+mVenue.getName());
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -51,32 +50,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         updateUI();
-        // Add a marker in Sydney and move the camera
-        /*LatLng sydney = new LatLng(venueLat, venueLon);
-        //LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
     }
 
+    // Method to update the map
     private void updateUI(){
         if(mMap == null){
             return;
         }
 
-        /*LatLng itemPoint = new LatLng(-34, 151);
-        LatLng myPoint = new LatLng(-34, 151);
-        LatLngBounds bounds = new LatLngBounds.Builder()
-                .include(itemPoint)
-                .include(myPoint)
-                .build();
-
-        int margin  = getResources().getDimensionPixelSize(R.dimen.map_inset_margin);
-        CameraUpdate update = CameraUpdateFactory.newLatLngBounds(bounds, margin);
-        mMap.animateCamera(update);*/
-
         LatLng itemPoint = new LatLng(venueLat, venueLon);
         LatLng myPoint = new LatLng(venueLat, venueLon);
-        //Log.d(TAG, "itemPoint :"+mMapItem.getLat()+" myPoint "+mCurrentLocation.getLatitude());*/
         MarkerOptions myMarker = new MarkerOptions().position(myPoint).title(venueTitle);
         mMap.clear();
         mMap.addMarker(myMarker);
